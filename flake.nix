@@ -31,6 +31,11 @@
             sha256 = "sha256-oAyD2+LMHINZN8Kx87KxKLyOwf0EYnLMoJsoRZvmvBY=";
           };
 
+          lz4 = fetchTarball {
+            url = "https://github.com/lz4/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz";
+            sha256 = "sha256:14l616ja261x5cdb2rh6y00qpzcqq8m8a80mqjl6zb7ggc7h48v2";
+          };
+
           nativeBuildInputs = [
             pkgs.pkg-config
             pkgs.cmake
@@ -39,6 +44,7 @@
             pkgs.snappy
             pkgs.zlib
             pkgs.lzlib
+            lz4
          ];
 
           buildInputs = [
@@ -46,9 +52,6 @@
             pkgs.gnumake
             pkgs.openssl
             pkgs.snappy
-            pkgs.lz4
-            pkgs.zlib
-            pkgs.lzlib
             pkgs.go
             pkgs.gawk
             pkgs.libllvm
